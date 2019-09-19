@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import Card from "../UI/Card";
-import "./IngredientForm.css";
+import Card from '../UI/Card';
+import './IngredientForm.css';
 
 const IngredientForm = React.memo(props => {
   const [enteredTitle, setEnteredTitle] = useState('');
@@ -9,7 +9,7 @@ const IngredientForm = React.memo(props => {
 
   const submitHandler = event => {
     event.preventDefault();
-    props.onAddIngredient({title: enteredTitle, amount: enteredAmount});
+    props.onAddIngredient({ title: enteredTitle, amount: enteredAmount });
   };
 
   return (
@@ -22,8 +22,8 @@ const IngredientForm = React.memo(props => {
               type="text"
               id="title"
               value={enteredTitle}
-              onChange={e => {
-                setEnteredTitle(e.target.value);
+              onChange={event => {
+                setEnteredTitle(event.target.value);
               }}
             />
           </div>
@@ -33,8 +33,8 @@ const IngredientForm = React.memo(props => {
               type="number"
               id="amount"
               value={enteredAmount}
-              onChange={e => {
-                  setEnteredAmount(e.target.value);
+              onChange={event => {
+                setEnteredAmount(event.target.value);
               }}
             />
           </div>
